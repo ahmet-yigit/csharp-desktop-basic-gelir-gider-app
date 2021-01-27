@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ytmDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="gelir">
+          <Key>
+            <PropertyRef Name="gelirId" />
+          </Key>
+          <Property Name="gelirId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gelirTanim" Type="nvarchar" MaxLength="100" />
+          <Property Name="gelirTutar" Type="int" />
+          <Property Name="gelirDate" Type="date" />
+          <Property Name="gelirSearch" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="gider">
+          <Key>
+            <PropertyRef Name="giderId" />
+          </Key>
+          <Property Name="giderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="giderTanim" Type="nvarchar" MaxLength="100" />
+          <Property Name="giderTutar" Type="int" />
+          <Property Name="giderDate" Type="date" />
+          <Property Name="giderSearch" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ytmDBModelStoreContainer">
+          <EntitySet Name="gelir" EntityType="Self.gelir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gider" EntityType="Self.gider" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ytmDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="gelir">
+          <Key>
+            <PropertyRef Name="gelirId" />
+          </Key>
+          <Property Name="gelirId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gelirTanim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="gelirTutar" Type="Int32" />
+          <Property Name="gelirDate" Type="DateTime" Precision="0" />
+          <Property Name="gelirSearch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gider">
+          <Key>
+            <PropertyRef Name="giderId" />
+          </Key>
+          <Property Name="giderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="giderTanim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="giderTutar" Type="Int32" />
+          <Property Name="giderDate" Type="DateTime" Precision="0" />
+          <Property Name="giderSearch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ytmDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="gelir" EntityType="Self.gelir" />
+          <EntitySet Name="gider" EntityType="Self.gider" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ytmDBModelStoreContainer" CdmEntityContainer="ytmDBEntities">
+          <EntitySetMapping Name="gelir">
+            <EntityTypeMapping TypeName="ytmDBModel.gelir">
+              <MappingFragment StoreEntitySet="gelir">
+                <ScalarProperty Name="gelirId" ColumnName="gelirId" />
+                <ScalarProperty Name="gelirTanim" ColumnName="gelirTanim" />
+                <ScalarProperty Name="gelirTutar" ColumnName="gelirTutar" />
+                <ScalarProperty Name="gelirDate" ColumnName="gelirDate" />
+                <ScalarProperty Name="gelirSearch" ColumnName="gelirSearch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gider">
+            <EntityTypeMapping TypeName="ytmDBModel.gider">
+              <MappingFragment StoreEntitySet="gider">
+                <ScalarProperty Name="giderId" ColumnName="giderId" />
+                <ScalarProperty Name="giderTanim" ColumnName="giderTanim" />
+                <ScalarProperty Name="giderTutar" ColumnName="giderTutar" />
+                <ScalarProperty Name="giderDate" ColumnName="giderDate" />
+                <ScalarProperty Name="giderSearch" ColumnName="giderSearch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

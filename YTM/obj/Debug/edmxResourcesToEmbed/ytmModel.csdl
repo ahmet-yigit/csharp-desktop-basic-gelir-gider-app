@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ytmDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="gelir">
+    <Key>
+      <PropertyRef Name="gelirId" />
+    </Key>
+    <Property Name="gelirId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gelirTanim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="gelirTutar" Type="Int32" />
+    <Property Name="gelirDate" Type="DateTime" Precision="0" />
+    <Property Name="gelirSearch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="gider">
+    <Key>
+      <PropertyRef Name="giderId" />
+    </Key>
+    <Property Name="giderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="giderTanim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="giderTutar" Type="Int32" />
+    <Property Name="giderDate" Type="DateTime" Precision="0" />
+    <Property Name="giderSearch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ytmDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="gelir" EntityType="Self.gelir" />
+    <EntitySet Name="gider" EntityType="Self.gider" />
+  </EntityContainer>
+</Schema>

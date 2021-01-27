@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ytmDBModelStoreContainer" CdmEntityContainer="ytmDBEntities">
+    <EntitySetMapping Name="gelir">
+      <EntityTypeMapping TypeName="ytmDBModel.gelir">
+        <MappingFragment StoreEntitySet="gelir">
+          <ScalarProperty Name="gelirId" ColumnName="gelirId" />
+          <ScalarProperty Name="gelirTanim" ColumnName="gelirTanim" />
+          <ScalarProperty Name="gelirTutar" ColumnName="gelirTutar" />
+          <ScalarProperty Name="gelirDate" ColumnName="gelirDate" />
+          <ScalarProperty Name="gelirSearch" ColumnName="gelirSearch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gider">
+      <EntityTypeMapping TypeName="ytmDBModel.gider">
+        <MappingFragment StoreEntitySet="gider">
+          <ScalarProperty Name="giderId" ColumnName="giderId" />
+          <ScalarProperty Name="giderTanim" ColumnName="giderTanim" />
+          <ScalarProperty Name="giderTutar" ColumnName="giderTutar" />
+          <ScalarProperty Name="giderDate" ColumnName="giderDate" />
+          <ScalarProperty Name="giderSearch" ColumnName="giderSearch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

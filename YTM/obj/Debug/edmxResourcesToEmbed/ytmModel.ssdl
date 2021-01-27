@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ytmDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="gelir">
+    <Key>
+      <PropertyRef Name="gelirId" />
+    </Key>
+    <Property Name="gelirId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gelirTanim" Type="nvarchar" MaxLength="100" />
+    <Property Name="gelirTutar" Type="int" />
+    <Property Name="gelirDate" Type="date" />
+    <Property Name="gelirSearch" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="gider">
+    <Key>
+      <PropertyRef Name="giderId" />
+    </Key>
+    <Property Name="giderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="giderTanim" Type="nvarchar" MaxLength="100" />
+    <Property Name="giderTutar" Type="int" />
+    <Property Name="giderDate" Type="date" />
+    <Property Name="giderSearch" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="ytmDBModelStoreContainer">
+    <EntitySet Name="gelir" EntityType="Self.gelir" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gider" EntityType="Self.gider" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
